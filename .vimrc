@@ -10,11 +10,12 @@ set backspace=indent,eol,start
 set nowrap
 set ruler
 set visualbell
+set vb t_vb=
 set mouse=a
 set pastetoggle=<F11>
 set background=light
 let g:solarized_termcolors=256
-colorscheme industry
+"colorscheme industry
 
 cmap w!! w !sudo tee > /dev/null %
 
@@ -34,9 +35,9 @@ set directory=~/.vim/swap//,/tmp//
 " set listchars=tab:>.,trail:.
 
 "" Spacing
-set tabstop=4
+set tabstop=2
 set laststatus=4
-set shiftwidth=4
+set shiftwidth=2
 set autoindent
 set expandtab
 
@@ -72,6 +73,3 @@ augroup json_autocmd
   autocmd FileType json set expandtab 
   autocmd FileType json set foldmethod=syntax 
 augroup END
-
-" Plugin Autoload
-execute pathogen#infect()
