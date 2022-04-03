@@ -1,0 +1,19 @@
+---
+
+- name: Add vimrc file settings
+  ansible.builtin.template:
+    src: vimrc.j2
+    dest: /home/tjp/.vimrc
+    owner: tjp
+    group: tjp
+
+- name: Create vimrc support directories
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    owner: tjp
+    group: tjp
+  loop:
+    - /home/tjp/.vim/backup
+    - /home/tjp/.vim/undo
+    - /home/tjp/.vim/swap

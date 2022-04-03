@@ -1,0 +1,14 @@
+# ansible-playbook -i servers --ask-pass --ask-become-pass vim.yml --limit=virtual
+- hosts: all
+  become: yes
+  roles:
+    - role: guts
+#      tags:
+#        - user
+
+  tasks:
+#  - name: debug host variables 
+#    ansible.builtin.debug:
+#      msg: Is Monarch - {{ has_monarch }}
+#    tags:
+#      - always
