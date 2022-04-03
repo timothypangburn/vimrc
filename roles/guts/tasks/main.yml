@@ -4,16 +4,16 @@
   ansible.builtin.template:
     src: vimrc.j2
     dest: /home/tjp/.vimrc
-    owner: tjp
-    group: tjp
+    owner: "{{ vim_user }}"
+    group: "{{ vim_group }}"
 
 - name: Create vimrc support directories
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
-    owner: tjp
-    group: tjp
+    owner: "{{ vim_user }}"
+    group: "{{ vim_group }}"
   loop:
-    - /home/tjp/.vim/backup
-    - /home/tjp/.vim/undo
-    - /home/tjp/.vim/swap
+    - "/home/{{ vim_user }}/.vim/backup"
+    - "/home/{{ vim_user }}/.vim/undo"
+    - "/home/{{ vim_user }}/.vim/swap"
