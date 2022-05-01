@@ -17,3 +17,17 @@
     - "/home/{{ vim_user }}/.vim/backup"
     - "/home/{{ vim_user }}/.vim/undo"
     - "/home/{{ vim_user }}/.vim/swap"
+    - "/home/{{ vim_user }}/.vim/colors"
+
+- name: Install Color Schemes
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "/home/{{ vim_user }}/.vim/colors/{{ item }}"
+    owner: "{{ vim_user }}"
+    group: "{{ vim_group }}"
+  loop:
+    - "everblush.vim"
+    - "molokai.vim"
+    - "papercolor.vim"
+
+

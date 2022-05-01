@@ -1,17 +1,10 @@
 # ansible-playbook -i servers --ask-pass --ask-become-pass vim.yml --limit=virtual
+# ansible-playbook --connection=local -i systems vim.yml --limit=localhost
 - hosts: all
   become: yes
   vars:
-    vim_user: sf
-    vim_group: sf
+    vim_user: defaultuser
+    vim_group: defaultuser
   roles:
     - role: guts
-#      tags:
-#        - user
 
-  tasks:
-#  - name: debug host variables 
-#    ansible.builtin.debug:
-#      msg: Is Monarch - {{ has_monarch }}
-#    tags:
-#      - always
