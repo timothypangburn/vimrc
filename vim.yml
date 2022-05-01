@@ -1,6 +1,9 @@
 # ansible-playbook -i servers --ask-pass --ask-become-pass vim.yml --limit=virtual
 - hosts: all
   become: yes
+  vars:
+    vim_user: sf
+    vim_group: sf
   roles:
     - role: guts
 #      tags:
